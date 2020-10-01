@@ -11,6 +11,13 @@ A password generator that creates a new, secure password based on a series of pr
 * [Github Repository](https://github.com/JonDnv/PasswordGenerator)
 ---
 
+## Mock Up
+
+The following image shows the finished site:
+![Website](./Assets/)
+
+---
+
 ## Contributing
 
 * Bootstrap
