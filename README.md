@@ -56,5 +56,4 @@ The following image shows the finished site:
  2. Created If/Else Statements for Variable Selection
  3. Completed Password Generation Functions.
  4. Completed HTML body for index.html
- 5. Fixed Bug where Special Characters Not Used for Password Creation.
- 6. 
+ 5. Set Function to Output to HTML box in index.html 

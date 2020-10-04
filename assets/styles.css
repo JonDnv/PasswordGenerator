@@ -20,3 +20,9 @@ nav {
   margin-top: 1rem;
   color: #086814;
 }
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
