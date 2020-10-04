@@ -42,10 +42,13 @@ The following image shows the finished site:
 
 * Bootstrap
 * Font Awesome
+* Stack Overflow
+* w3 Scbools
 
 ---
 
 ## Change History
 
  1. Created Shell index.html site & README.md
- 2. 
+ 2. Created If/Else Statements for Variable Selection
+ 3. Completed Password Generation Functions.
