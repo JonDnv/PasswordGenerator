@@ -1,0 +1,25 @@
+body {
+  background-image: url(./circuitboard.jpg);
+}
+
+nav {
+  background-color: #086814;
+  color: #bb935e;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.navbar-header {
+  text-align: center;
+}
+
+.card {
+  margin-top: 6rem;
+}
+
+.btn-light {
+  margin-top: 1rem;
+  color: #086814;
+}

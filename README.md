@@ -46,6 +46,7 @@ The following image shows the finished site:
 * Font Awesome
 * Stack Overflow
 * w3 Scbools
+* Unsplash
 
 ---
 
@@ -54,3 +55,4 @@ The following image shows the finished site:
  1. Created Shell index.html site & README
  2. Created If/Else Statements for Variable Selection
  3. Completed Password Generation Functions.
+ 4. Completed HTML body for index.html

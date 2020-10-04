@@ -19,179 +19,248 @@
   <body>
     <script>
       //Function Wrapper
-      // function password() {
-
-      // Function to Create Password Based On Parameters Provided
-      // numOfChar
-      // array(s) to Use for Password Generation
-      // numOfArrays
-      function passwordGeneration(z, y, z) {
-        var result = "";
-        for (i = 0; i < numOfChar; i++) {
-          var arrNum = Math.floor(Math.random() * numOfArrays);
-          var charNum = Math.floor(
-            Math.random() * useCharacters[arrNum].length
-          );
-          var result = result + useCharacters[arrNum][charNum];
+      function password() {
+        // Function to Create Password Based On Parameters Provided
+        // numOfChar
+        // array(s) to Use for Password Generation
+        // numOfArrays
+        function passwordGeneration(z, y, z) {
+          var result = "";
+          for (i = 0; i < numOfChar; i++) {
+            var arrNum = Math.floor(Math.random() * numOfArrays);
+            var charNum = Math.floor(
+              Math.random() * useCharacters[arrNum].length
+            );
+            var result = result + useCharacters[arrNum][charNum];
+          }
+          console.log(result);
         }
-        console.log(result);
+
+        //Array of Numbers
+        var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+        //Array of Lower Case Letters
+        var lowerCase = [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z",
+        ];
+
+        //Array of Upper Case Letters
+        var upperCase = [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z",
+        ];
+
+        //Array of Special Characters
+        var specialCharacters = [
+          "\ ",
+          "\!",
+          '"',
+          "\#",
+          "\%",
+          "\&",
+          "'",
+          "\(",
+          "\)",
+          "\*",
+          "\+",
+          "\,",
+          "\-",
+          "\.",
+          "\/",
+          "\:",
+          "\;",
+          "\<",
+          "\=",
+          "\>",
+          "\?",
+          "\@",
+          "\[",
+          "\\",
+          "\]",
+          "\^",
+          "\_",
+          "\`",
+          "\{",
+          "\|",
+          "\}",
+          "\~",
+        ];
+
+        // Declare Variables for Number of Characters
+        var numOfChar = prompt("Please Enter The Number Of Characters To Use");
+
+        // If Statement for Number of Characters
+        if (Number.isInteger(numOfChar) && numOfChar > 7 && numOfChar < 129) {
+          // Declaring & Confirming Character Type Variables if Character Count Criteria has been Met.
+          var lc = confirm("Do You Want To Use Lower Case Letters:");
+          var uc = confirm("Do You Want To Use Upper Case Letters:");
+          var sc = confirm("Do You Want To Use Special Characters:");
+          var nu = confirm("Do You Want To Use Numberic Characters:");
+
+          // Using Character Type Variables to Determine Characters Used In Password Creation
+
+          // Sort Out True/False Statements
+          if (lc === true && uc === true && nu === true && sc === true) {
+            var useCharacters = [
+              lowerCase,
+              upperCase,
+              specialCharacters,
+              numbers,
+            ];
+            var numOfArrays = 3;
+            var password = passwordGeneration(
+              numOfArrays,
+              numOfChar,
+              useCharacters
+            );
+          } else if (lc === true && uc === true && nu === true && sc === true) {
+            var useCharacters = [lowerCase, upperCase, numbers];
+            var numOfArrays = 2;
+            var password = passwordGeneration(
+              numOfArrays,
+              numOfChar,
+              useCharacters
+            );
+          } else if (lc === true && uc === true && nu === true && sc === true) {
+            var useCharacters = [lowerCase, specialCharacters];
+            var numOfArrays = 1;
+            var password = passwordGeneration(
+              numOfArrays,
+              numOfChar,
+              useCharacters
+            );
+          } else if (lc === true && uc === true && nu === true && sc === true) {
+            var useCharacters = [lowerCase, numbers];
+            var numOfArrays = 1;
+            var password = passwordGeneration(
+              numOfArrays,
+              numOfChar,
+              useCharacters
+            );
+          } else if (lc === true && uc === true && nu === true && sc === true) {
+            var useCharacters = [lowerCase];
+            var numOfArrays = 0;
+            var password = passwordGeneration(
+              numOfArrays,
+              numOfChar,
+              useCharacters
+            );
+          } else if (lc === true && uc === true && nu === true && sc === true) {
+            var useCharacters = [upperCase, specialCharacters, numbers];
+            var numOfArrays = 2;
+            var password = passwordGeneration(
+              numOfArrays,
+              numOfChar,
+              useCharacters
+            );
+          } else if (lc === true && uc === true && nu === true && sc === true) {
+            var useCharacters = [upperCase, numbers];
+            var numOfArrays = 1;
+            var password = passwordGeneration(
+              numOfArrays,
+              numOfChar,
+              useCharacters
+            );
+          } else if (lc === true && uc === true && nu === true && sc === true) {
+            var useCharacters = [specialCharacters];
+            var numOfArrays = 0;
+            var password = passwordGeneration(
+              numOfArrays,
+              numOfChar,
+              useCharacters
+            );
+          } else var password = "You Must Use At Least One Character Type";
+        } else var password = "You Must Choose Between 8 & 128 Characters";
+
+        return password;
       }
-
-      //Array of Numbers
-      var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
-      //Array of Lower Case Letters
-      var lowerCase = [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t",
-        "u",
-        "v",
-        "w",
-        "x",
-        "y",
-        "z",
-      ];
-
-      //Array of Upper Case Letters
-      var upperCase = [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "L",
-        "M",
-        "N",
-        "O",
-        "P",
-        "Q",
-        "R",
-        "S",
-        "T",
-        "U",
-        "V",
-        "W",
-        "X",
-        "Y",
-        "Z",
-      ];
-
-      //Array of Special Characters
-      var specialCharacters = [
-        "\ ",
-        "\!",
-        '"',
-        "\#",
-        "\%",
-        "\&",
-        "'",
-        "\(",
-        "\)",
-        "\*",
-        "\+",
-        "\,",
-        "\-",
-        "\.",
-        "\/",
-        "\:",
-        "\;",
-        "\<",
-        "\=",
-        "\>",
-        "\?",
-        "\@",
-        "\[",
-        "\\",
-        "\]",
-        "\^",
-        "\_",
-        "\`",
-        "\{",
-        "\|",
-        "\}",
-        "\~",
-      ];
-
-      // Declare Variables for Number of Characters
-      var numOfChar = prompt("Please Enter The Number Of Characters To Use");
-
-      // If Statement for Number of Characters
-      if (Number.isInteger(numOfChar) && numOfChar > 7 && numOfChar < 129) {
-        // Declaring & Confirming Character Type Variables if Character Count Criteria has been Met.
-        var lc = confirm("Do You Want To Use Lower Case Letters:");
-        var uc = confirm("Do You Want To Use Upper Case Letters:");
-        var sc = confirm("Do You Want To Use Special Characters:");
-        var nu = confirm("Do You Want To Use Numberic Characters:");
-
-        // Using Character Type Variables to Determine Characters Used In Password Creation
-
-        // Sort Out True/False Statements
-        if (lc === true && uc === true && nu === true && sc === true) {
-          var useCharacters = [
-            lowerCase,
-            upperCase,
-            specialCharacters,
-            numbers,
-          ];
-          var numOfArrays = 3;
-          passwordGeneration(numOfArrays, numOfChar, useCharacters);
-        } else if (lc === true && uc === true && nu === true && sc === true) {
-          var useCharacters = [lowerCase, upperCase, numbers];
-          var numOfArrays = 2;
-          passwordGeneration(numOfArrays, numOfChar, useCharacters);
-        } else if (lc === true && uc === true && nu === true && sc === true) {
-          var useCharacters = [lowerCase, specialCharacters];
-          var numOfArrays = 1;
-          passwordGeneration(numOfArrays, numOfChar, useCharacters);
-        } else if (lc === true && uc === true && nu === true && sc === true) {
-          var useCharacters = [lowerCase, numbers];
-          var numOfArrays = 1;
-          passwordGeneration(numOfArrays, numOfChar, useCharacters);
-        } else if (lc === true && uc === true && nu === true && sc === true) {
-          var useCharacters = [lowerCase];
-          var numOfArrays = 0;
-          passwordGeneration(numOfArrays, numOfChar, useCharacters);
-        } else if (lc === true && uc === true && nu === true && sc === true) {
-          var useCharacters = [upperCase, specialCharacters, numbers];
-          var numOfArrays = 2;
-          passwordGeneration(numOfArrays, numOfChar, useCharacters);
-        } else if (lc === true && uc === true && nu === true && sc === true) {
-          var useCharacters = [upperCase, numbers];
-          var numOfArrays = 1;
-          passwordGeneration(numOfArrays, numOfChar, useCharacters);
-        } else if (lc === true && uc === true && nu === true && sc === true) {
-          var useCharacters = [specialCharacters];
-          var numOfArrays = 0;
-          passwordGeneration(numOfArrays, numOfChar, useCharacters);
-        } else console.log("You Must Use At Least One Character Type");
-      } else console.log("You Must Choose Between 8 & 128 Characters");
-
-      // }
     </script>
+
+    <!-- Begin Site HTML -->
+
+    <!-- Nav (Website Top Bar) -->
+    <container>
+      <nav class="navbar fixed-top">
+        <div class="navbar-brand mx-auto">
+          <h1>Password Generator</h1>
+        </div>
+      </nav>
+    </container>
+
+    <!-- Card For Password Return -->
+    <container class="row">
+      <container class="col-md-3"> </container>
+      <container class="col-md-6">
+        <div class="card">
+          <form>
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                type="text"
+                id="PasswordReturn"
+                rows="16rem"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+      </container>
+    </container>
+
+    <container class="row">
+      <div class="col text-center">
+        <button class="btn btn-light">Generate Passsword</button>
+      </div>
+    </container>
+
     <!-- Bootstrap JS CDNs -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
