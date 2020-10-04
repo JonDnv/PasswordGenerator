@@ -140,7 +140,7 @@
       var numOfChar = prompt("Please Enter The Number Of Characters To Use");
 
       // If Statement for Number of Characters
-      if (numOfChar > 7 && numOfChar < 129) {
+      if (Number.isInteger(numOfChar) && numOfChar > 7 && numOfChar < 129) {
         // Declaring & Confirming Character Type Variables if Character Count Criteria has been Met.
         var lc = confirm("Do You Want To Use Lower Case Letters:");
         var uc = confirm("Do You Want To Use Upper Case Letters:");
