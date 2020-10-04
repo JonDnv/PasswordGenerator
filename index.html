@@ -16,10 +16,148 @@
     <title>Password Generator</title>
   </head>
   <body>
+    <script>
+      //Array of Lower Case Letters
+      var lowerCase = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+      ];
 
+      //Array of Upper Case Letters
+      var upperCase = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+      ];
 
+      //Array of Special Characters
+      var specialCharacters = [
+        "\ ",
+        "\!",
+        '"',
+        "\#",
+        "\%",
+        "\&",
+        "'",
+        "\(",
+        "\)",
+        "\*",
+        "\+",
+        "\,",
+        "\-",
+        "\.",
+        "\/",
+        "\:",
+        "\;",
+        "\<",
+        "\=",
+        "\>",
+        "\?",
+        "\@",
+        "\[",
+        "\\",
+        "\]",
+        "\^",
+        "\_",
+        "\`",
+        "\{",
+        "\|",
+        "\}",
+        "\~",
+      ];
 
-    
+      // Declare Variables for Number of Characters
+      var numOfChar = prompt("Please Enter The Number Of Characters To Use");
+
+      // If Statement for Number of Characters
+      if (numOfChar > 7 && numOfChar < 129) {
+        // Declaring & Confirming Character Type Variables if Character Count Criteria has been Met.
+        var lc = confirm("Do You Want To Use Lower Case Letters:");
+        var uc = confirm("Do You Want To Use Upper Case Letters:");
+        var sc = confirm("Do You Want To Use Special Characters:");
+        // Using Character Type Variables to Determine Characters Used In Password Creation
+        if (lc === true && uc === true && sc === true) {
+          var useCharacters = [lowerCase, upperCase, specialCharacters];
+          var numOfArrays = 3;
+        } else if (lc === true && uc === true && sc !== true) {
+          var useCharacters = [lowerCase, upperCase];
+          var numOfArrays = 2;
+        } else if (lc === true && sc === true && uc !== true) {
+          var useCharacters = [lowerCase, specialCharacters];
+          var numOfArrays = 2;
+        } else if (lc === true && uc !== true && sc !== true) {
+          var useCharacters = [lowerCase];
+          var numOfArrays = 1;
+        } else if (uc === true && sc === true && lc !== true) {
+          var useCharacters = [upperCase, specialCharacters];
+          var numOfArrays = 2;
+        } else if (uc === true && sc !== true && lc !== true) {
+          var useCharacters = [upperCase];
+          var numOfArrays = 1;
+        } else if (sc === true && lc !== true && uc !== true) {
+          var useCharacters = [specialCharacters];
+          var numOfArrays = 1;
+        } else console.log("You Must Use At Least One Character Type");
+        var numOfArrays = 0;
+      } else console.log("You Must Choose Between 8 & 128 Characters");
+
+      // Function to Create Password Based On Parameters Provided
+      // numOfChar
+      // array(s) to Use for Password Generation
+      // numOfArrays
+      function createPassword(x, y, z) {
+        for (i = 0; i < numOfChar; i++) {}
+      }
+
+      console.log(createPassword(numOfChar, useCharacters, numOfArrays));
+    </script>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
