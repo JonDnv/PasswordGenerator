@@ -47,6 +47,7 @@ The following image shows the finished site:
 * Stack Overflow
 * w3 Scbools
 * Unsplash
+* Flexbox
 
 ---
 
