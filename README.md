@@ -54,6 +54,8 @@ The following image shows the finished site:
 
  1. Created Shell index.html site & README
  2. Created If/Else Statements for Variable Selection
- 3. Completed Password Generation Functions.
+ 3. Completed Password Generation Functions
  4. Completed HTML body for index.html
- 5. Set Function to Output to HTML box in index.html 
+ 5. Set Function to Output to HTML box in index.html
+ 6. Updated HTML to Use Flexbox
+ 7. 

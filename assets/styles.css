@@ -2,18 +2,27 @@ body {
   background-image: url(./circuitboard.jpg);
 }
 
-nav {
-  background-color: #086814;
-  color: #bb935e;
-}
-
-.navbar-header {
+.title-container {
+  display: flex;
+  flex: 1;
   text-align: center;
 }
 
-.card {
-  margin-top: 6rem;
-  background-color: #faf9fa;
+.title-bar {
+  background-color: #086814;
+  color: #bb935e;
+  padding: 5px;
+  flex-basis: 100%;
+  margin-bottom: 1rem;
+}
+
+.output-container {
+  display: flex;
+  justify-content: center;
+}
+
+.output-card {
+  flex-basis: 30%;
 }
 
 .btn-light {
@@ -21,8 +30,8 @@ nav {
   color: #086814;
 }
 
-@media screen and (max-width: 500px) {
-  h1 {
-    font-size: 2rem;
-  }
+@media (max-width: 500px) {
+ .output-card {
+   flex-basis: 80%;
+ }
 }
