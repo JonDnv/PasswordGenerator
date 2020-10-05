@@ -59,4 +59,4 @@ The following image shows the finished site:
  4. Completed HTML body for index.html
  5. Set Function to Output to HTML box in index.html
  6. Updated HTML to Use Flexbox
- 7. 
+ 7. Fixed Bug Regarding Special Character use
