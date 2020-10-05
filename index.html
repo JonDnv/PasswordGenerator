@@ -132,7 +132,7 @@
       ];
 
       // Declare Variables for Number of Characters
-      var numOfChar = prompt("Please Enter The Number Of Characters To Use");
+      var numOfChar = prompt("Please Enter The Number Of Characters To Use:");
 
       // If Statement for Number of Characters
       if (numOfChar > 7 && numOfChar < 129) {
@@ -321,12 +321,10 @@
   </container>
 
   <!-- Button to Start Password Generation Function -->
-  <container class="row">
-    <div class="col text-center">
-      <button class="btn btn-light" onclick="password()">
-        Generate Passsword
-      </button>
-    </div>
+  <container class="button-container">
+    <button class="btn btn-light" onclick="password()">
+      Generate Passsword
+    </button>
   </container>
 
   <!-- Bootstrap JS CDNs -->
