@@ -1,5 +1,5 @@
 body {
-  background-image: url(./circuitboard.jpg);
+  background-image: url(./isaac-quesada-vovoWG_IIJQ-unsplash.jpg);
 }
 
 .title-container {
@@ -9,8 +9,8 @@ body {
 }
 
 .title-bar {
-  background-color: #086814;
-  color: #bb935e;
+  background-color: #292929;
+  color: #f8f9fa;
   padding: 5px;
   flex-basis: 100%;
   margin-bottom: 1rem;
@@ -32,7 +32,7 @@ body {
 
 .btn-light {
   margin-top: 1rem;
-  color: #086814;
+  color: black;
 }
 
 @media (max-width: 500px) {

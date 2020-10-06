@@ -60,3 +60,5 @@ The following image shows the finished site:
  5. Set Function to Output to HTML box in index.html
  6. Updated HTML to Use Flexbox
  7. Fixed Bug Regarding Special Character use
+ 8. Changed Design of Site
+ 9. Reduced Code Base Using New Logic
