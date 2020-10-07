@@ -122,34 +122,39 @@ function passwordParameters() {
   var numOfChar = 0;
   var useCharacters = [];
 
-  // While Loop To Get Character Count
-  while (numOfChar < 8 || numOfChar > 129) {
-    numOfChar = prompt("Please Enter A Number Of Characters Between 8 & 128:");
-  }
+  //While Loop To Get Character Count
+  do {
+    numOfChar = prompt("Please Enter A Number of Characters Between 8 & 128:");
+    parseInt(numOfChar);
+  } while (isNaN(numOfChar) || numOfChar < 8 || numOfChar > 128);
 
   // Declare Variables to Determine Character Types
-  var lc = confirm("Do You Want To Use Lower Case Letters:");
-  var uc = confirm("Do You Want To Use Upper Case Letters:");
-  var nu = confirm("Do You Want To Use Numeric Characters:");
-  var sc = confirm("Do You Want To Use Special Characters:");
+  var lc = false;
+  var uc = false;
+  var nu = false;
+  var sc = false;
 
-  // If No Character Type Returned, Notify User and End Program
-  if (lc === false && uc === false && nu === false && sc === false) {
-    alert("You Must Select At Least One Character Type. Please Try Again.");
-  } else {
-    // Push Each Character Type Selected Into useCharacters Array
-    if (lc === true) {
-      useCharacters.push(lowerCase);
-    }
-    if (uc === true) {
-      useCharacters.push(upperCase);
-    }
-    if (nu === true) {
-      useCharacters.push(numbers);
-    }
-    if (sc === true) {
-      useCharacters.push(specialCharacters);
-    }
+  //While Loop To Get Character Types
+  while (lc == false && uc == false && nu == false && sc == false) {
+    alert("You Must Chose At Least One Of The Following Character Types");
+    lc = confirm("Do You Want To Use Lower Case Letters:");
+    uc = confirm("Do You Want To Use Upper Case Letters:");
+    nu = confirm("Do You Want To Use Numeric Characters:");
+    sc = confirm("Do You Want To Use Special Characters:");
+  }
+
+  // Push Each Character Type Selected Into useCharacters Array
+  if (lc === true) {
+    useCharacters.push(lowerCase);
+  }
+  if (uc === true) {
+    useCharacters.push(upperCase);
+  }
+  if (nu === true) {
+    useCharacters.push(numbers);
+  }
+  if (sc === true) {
+    useCharacters.push(specialCharacters);
   }
 
   // Call Password Generation Function

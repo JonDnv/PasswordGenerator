@@ -63,3 +63,4 @@ The following image shows the finished site:
  8. Changed Design of Site
  9. Reduced Code Base Using New Logic
  10. Updated to Use index.js file
+ 11. Fixed Logic to Check for Valid Answers
