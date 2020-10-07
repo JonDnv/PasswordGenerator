@@ -62,3 +62,4 @@ The following image shows the finished site:
  7. Fixed Bug Regarding Special Character use
  8. Changed Design of Site
  9. Reduced Code Base Using New Logic
+ 10. Updated to Use index.js file

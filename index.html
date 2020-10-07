@@ -1,218 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap & FontAwesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="icon" type="image/png" href="./assets/userlock.ico" />
+    <title>Password Generator</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Bootstrap & FontAwesome CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="./assets/styles.css" />
-  <link rel="icon" type="image/png" href="./assets/userlock.ico" />
-  <title>Password Generator</title>
-</head>
-
-<body>
-  <script>
-    //Array of Numbers
-    var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
-    //Array of Lower Case Letters
-    var lowerCase = [
-      "a",
-      "b",
-      "c",
-      "d",
-      "e",
-      "f",
-      "g",
-      "h",
-      "i",
-      "j",
-      "k",
-      "l",
-      "m",
-      "n",
-      "o",
-      "p",
-      "q",
-      "r",
-      "s",
-      "t",
-      "u",
-      "v",
-      "w",
-      "x",
-      "y",
-      "z"
-    ];
-
-    //Array of Upper Case Letters
-    var upperCase = [
-      "A",
-      "B",
-      "C",
-      "D",
-      "E",
-      "F",
-      "G",
-      "H",
-      "I",
-      "J",
-      "K",
-      "L",
-      "M",
-      "N",
-      "O",
-      "P",
-      "Q",
-      "R",
-      "S",
-      "T",
-      "U",
-      "V",
-      "W",
-      "X",
-      "Y",
-      "Z"
-    ];
-
-    //Array of Special Characters
-    var specialCharacters = [
-      "\ ",
-      "\!",
-      '\"',
-      "\#",
-      "\%",
-      "\&",
-      "\'",
-      "\(",
-      "\)",
-      "\*",
-      "\+",
-      "\,",
-      "\-",
-      "\.",
-      "\/",
-      "\:",
-      "\;",
-      "\<",
-      "\=",
-      "\>",
-      "\?",
-      "\@",
-      "\[",
-      "\\",
-      "\]",
-      "\^",
-      "\_",
-      "\`",
-      "\{",
-      "\|",
-      "\}",
-      "\~"
-    ];
-
-    // Function to Create Password Based On Parameters Provided
-    // num = numOfChar
-    // char = array(s) to Use for Password Generation
-    function passwordGeneration(num, char) {
-      var result = "";
-      for (var i = 0; i < num; i++) {
-        if (i < char.length) {
-          var arrNum = i
-          var charNum = Math.floor(
-            Math.random() * (char[arrNum].length));
-          result = result + char[arrNum][charNum];
-        }
-        else {
-          var arrNum = Math.floor(Math.random() * (char.length));
-          var charNum = Math.floor(
-            Math.random() * (char[arrNum].length));
-          result = result + char[arrNum][charNum];
-        }
-      }
-      document.getElementById("PasswordReturn").innerHTML = result;
-    }
-
-    // Function To Get Password Parameters
-    function passwordParameters() {
-      // Declare Variables for Number of Characters
-      var numOfChar = 0;
-      var useCharacters = [];
-
-      // While Loop To Get Character Count
-      while (numOfChar < 8 || numOfChar > 129) {
-        numOfChar = prompt("Please Enter A Number Of Characters Between 8 & 128:");
-      }
-
-      var lc = confirm("Do You Want To Use Lower Case Letters:");
-      var uc = confirm("Do You Want To Use Upper Case Letters:");
-      var nu = confirm("Do You Want To Use Numeric Characters:");
-      var sc = confirm("Do You Want To Use Special Characters:");
-
-      if (lc === false && uc === false && nu === false && sc === false) {
-        alert("You Must Select At Least One Character Type. Please Try Again.")
-      }
-      else {
-        if (lc === true) {
-          useCharacters.push(lowerCase);
-        }
-
-        if (uc === true) {
-          useCharacters.push(upperCase);
-        }
-
-        if (nu === true) {
-          useCharacters.push(numbers);
-        }
-
-        if (sc === true) {
-          useCharacters.push(specialCharacters);
-        }
-      }
-
-      // Call Password Generation Function
-      passwordGeneration(numOfChar, useCharacters)
-    }
-  </script>
-
-  <!-- Begin Site HTML -->
-  <!-- Nav (Website Top Bar) -->
-  <container class="title-container">
-    <div class="title-bar">
-      <h1>
-        Password Generator
-      </h1>
-    </div>
-  </container>
-
-  <!-- Card For Password Return -->
-  <container class="output-container">
-    <form class="output-card">
-      <div class="form-group">
-        <textarea class="form-control" id="PasswordReturn" rows="5"></textarea>
+  <body>
+    <!-- Begin Site HTML -->
+    <!-- Nav (Website Top Bar) -->
+    <container class="title-container">
+      <div class="title-bar">
+        <h1>Password Generator</h1>
       </div>
-    </form>
-  </container>
+    </container>
 
-  <!-- Button to Start Password Generation Function -->
-  <container class="button-container">
-    <button class="btn btn-light" onclick="passwordParameters()">
-      Generate Passsword
-    </button>
-  </container>
+    <!-- Card For Password Return -->
+    <container class="output-container">
+      <form class="output-card">
+        <div class="form-group">
+          <textarea
+            class="form-control"
+            id="PasswordReturn"
+            rows="5"
+          ></textarea>
+        </div>
+      </form>
+    </container>
 
-  <!-- Bootstrap JS CDNs -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-</body>
-
+    <!-- Button to Start Password Generation Function -->
+    <container class="button-container">
+      <button class="btn btn-light" onclick="passwordParameters()">
+        Generate Passsword
+      </button>
+    </container>
+    <script src="./assets/index.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
